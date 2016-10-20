@@ -1,0 +1,31 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <include file="struts-default.xml"/>
+    <package name="Mysql" extends="struts-default">
+        <action name="AddBooks" class="Mysql.BookDB_Mysql" method="InsertBook">
+        	<result name="AddAuthor">AddAuthors.jsp</result>
+            <result>AddBooks.jsp</result>
+        </action>
+        <action name="AddAuthors" class="Mysql.BookDB_Mysql" method="InsertAuthor">
+        	<result>index.jsp</result>
+        </action>
+        <action name="CheckAuthor" class="Mysql.BookDB_Mysql" method="ViewAuthor">
+        	<result>ViewAuthor.jsp</result>
+        </action>
+        <action name="ViewBooks" class="Mysql.BookDB_Mysql" method="ViewBooks">
+        	<result>ViewBooks.jsp</result>
+        </action>
+        <action name="ViewBook" class="Mysql.BookDB_Mysql" method="ViewBook">
+        	<result>ViewBook.jsp</result>
+        </action>
+        <action name="DeleteBook" class="Mysql.BookDB_Mysql" method="DeleteBook">
+        	<result>index.jsp</result>
+        </action>
+        <action name="UpdateBook" class="Mysql.BookDB_Mysql" method="UpdateBook">
+        	<result name="AddAuthor">AddAuthors.jsp</result>
+        	<result>index.jsp</result>
+        </action>
+    </package>
+</struts>
